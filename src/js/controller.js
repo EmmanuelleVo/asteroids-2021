@@ -1,9 +1,9 @@
 const controller = {
     keys : { // le nom de la touche et son effet
-        'ArrowRight' : Math.PI / 180, // = 1 degré
-        'ArrowLeft' : -Math.PI / 180,
         'ArrowUp' : -1,
-        //'ArrowDown' : 1
+        'ArrowRight' : Math.PI / 25, // = 1 degré
+        'ArrowLeft' : -Math.PI / 25,
+        ' ' : 1 // espace = tir
     },
     activeKeys : [],
 
