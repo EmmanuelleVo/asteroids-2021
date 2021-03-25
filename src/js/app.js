@@ -19,6 +19,7 @@ const app = {
 
         this.ctx = this.canvasElt.getContext('2d')
         this.ctx.strokeStyle = '#fff'
+        this.ctx.fillStyle = '#fff'
 
         ship.init(this.canvasElt, this.ctx)
         this.animate()
@@ -30,6 +31,9 @@ const app = {
         })
         this.ctx.clearRect(0, 0, this.canvasElt.width, this.canvasElt.height)
         ship.update()
+        ship.bullets.forEach((bullet) => {
+            bullet.update()
+        })
     }
 }
 

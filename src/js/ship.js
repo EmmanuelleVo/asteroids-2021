@@ -1,5 +1,6 @@
 import controller from "./controller";
 import Vector from "./Vector";
+import Bullet from "./Bullet";
 
 const ship = {
 
@@ -10,8 +11,9 @@ const ship = {
     acceleration : null,
     canvas : null,
     ctx : null,
-    bulletTimer : 0, // -1
+    bulletTimer : -1, // pour ne pas avoir de décalage
     bulletTimerThreshold : 10,
+    bullets : [],
 
     init(canvas, ctx) {
         controller.init()
@@ -32,9 +34,9 @@ const ship = {
             } else if(activeKey === ' ') {
                 this.bulletTimer++
                 if(!(this.bulletTimer % this.bulletTimerThreshold)) { // ça tire
-                    console.log('hey')
+                    this.bullets.push(new Bullet())
                 } else {
-                    this.bulletTimer = 0
+                    this.bulletTimer // ne marche pas !!
                 }
             }
         })
